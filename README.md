@@ -14,12 +14,20 @@ As can be seen in the inputs, this module takes the variable `metric_filters`, w
   * `value` (string) -  What to publish to the metric. For example, if you're counting the occurrences of a particular term like "Error", the value will be "1" for each occurrence. Ifyou're counting the bytes transferred the published value will be the value in the log event.
   * `default_value` (string) - The value to emit when a filter pattern does not match a log event.
 
+
+<!-- BEGIN TFDOCS -->
+## Providers
+
+| Name | Version |
+|------|---------|
+| aws | n/a |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| create\_metric\_filter | Controls whether to create the metric filter | bool | `"true"` | no |
-| metric\_filters | Schema list of metric filters, consisting of name, filter\_pattern, log\_group\_name, and metric\_transformation schema | object | `<list>` | no |
+|------|-------------|------|---------|:-----:|
+| create\_metric\_filter | Controls whether to create the metric filter | `bool` | `true` | no |
+| metric\_filters | Schema list of metric filters, consisting of name, filter\_pattern, log\_group\_name, and metric\_transformation schema | <pre>list(object({<br>    name           = string<br>    filter_pattern = string<br>    log_group_name = string<br>    metric_transformation = object({<br>      name          = string<br>      namespace     = string<br>      value         = string<br>      default_value = string<br>    })<br>  }))<br></pre> | `[]` | no |
 
 ## Outputs
 
@@ -27,3 +35,4 @@ As can be seen in the inputs, this module takes the variable `metric_filters`, w
 |------|-------------|
 | metric\_filters | Maps of name => filter objects |
 
+<!-- END TFDOCS -->
