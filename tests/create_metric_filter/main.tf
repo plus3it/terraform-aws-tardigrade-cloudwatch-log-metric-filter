@@ -18,8 +18,3 @@ locals {
   ]
 }
 
-module "create_metric_filter" {
-  source               = "../../"
-  create_metric_filter = true
-  metric_filters       = local.filters
-}

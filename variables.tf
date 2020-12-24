@@ -1,8 +1,3 @@
-variable "create_metric_filter" {
-  description = "Controls whether to create the metric filter"
-  type        = bool
-  default     = true
-}
 
 variable "metric_filters" {
   description = "Schema list of metric filters, consisting of name, filter_pattern, log_group_name, and metric_transformation schema"
