@@ -18,3 +18,7 @@ locals {
   ]
 }
 
+module "create_metric_filter" {
+  source         = "../../"
+  metric_filters = local.filters
+}

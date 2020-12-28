@@ -1,5 +1,5 @@
 locals {
-  metric_alarms = { for alarm in var.metric_alarms : alarm.alarm_name => alarm }
+  metric_filters = { for filter in var.metric_filters : filter.name => filter }
 }
 
 resource "aws_cloudwatch_log_metric_filter" "this" {
