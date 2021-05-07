@@ -24,18 +24,23 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| aws | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+
+## Resources
+
+| Name | Type |
+|------|------|
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| metric\_filters | Schema list of metric filters, consisting of name, filter\_pattern, log\_group\_name, and metric\_transformation schema | <pre>list(object({<br>    name           = string<br>    filter_pattern = string<br>    log_group_name = string<br>    metric_transformation = object({<br>      name          = string<br>      namespace     = string<br>      value         = string<br>      default_value = string<br>    })<br>  }))</pre> | `[]` | no |
+| <a name="input_metric_filters"></a> [metric\_filters](#input\_metric\_filters) | Schema list of metric filters, consisting of name, filter\_pattern, log\_group\_name, and metric\_transformation schema | <pre>list(object({<br>    name           = string<br>    filter_pattern = string<br>    log_group_name = string<br>    metric_transformation = object({<br>      name          = string<br>      namespace     = string<br>      value         = string<br>      default_value = string<br>    })<br>  }))</pre> | `[]` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| metric\_filters | Maps of name => filter objects |
+| <a name="output_metric_filters"></a> [metric\_filters](#output\_metric\_filters) | Maps of name => filter objects |
 
 <!-- END TFDOCS -->
