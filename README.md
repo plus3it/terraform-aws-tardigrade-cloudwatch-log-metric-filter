@@ -14,6 +14,23 @@ As can be seen in the inputs, this module takes the variable `metric_filters`, w
   * `value` (string) -  What to publish to the metric. For example, if you're counting the occurrences of a particular term like "Error", the value will be "1" for each occurrence. Ifyou're counting the bytes transferred the published value will be the value in the log event.
   * `default_value` (string) - The value to emit when a filter pattern does not match a log event.
 
+## Testing
+
+Manual testing:
+
+```
+# Replace "xxx" with an actual AWS profile, then execute the integration tests.
+export AWS_PROFILE=xxx 
+make terraform/pytest PYTEST_ARGS="-v --nomock"
+```
+
+For automated testing, PYTEST_ARGS is optional and no profile is needed:
+
+```
+make mockstack/up
+make terraform/pytest PYTEST_ARGS="-v"
+make mockstack/clean
+```
 
 <!-- BEGIN TFDOCS -->
 ## Requirements
