@@ -52,7 +52,7 @@ No requirements.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_metric_filters"></a> [metric\_filters](#input\_metric\_filters) | Schema list of metric filters, consisting of name, filter\_pattern, log\_group\_name, and metric\_transformation schema | <pre>list(object({<br>    name           = string<br>    filter_pattern = string<br>    log_group_name = string<br>    metric_transformation = object({<br>      name          = string<br>      namespace     = string<br>      value         = string<br>      default_value = string<br>    })<br>  }))</pre> | `[]` | no |
+| <a name="input_metric_filters"></a> [metric\_filters](#input\_metric\_filters) | Schema list of metric filters, consisting of name, filter\_pattern, log\_group\_name, and metric\_transformation schema | <pre>list(object({<br/>    name           = string<br/>    filter_pattern = string<br/>    log_group_name = string<br/>    metric_transformation = object({<br/>      name          = string<br/>      namespace     = string<br/>      value         = string<br/>      default_value = string<br/>    })<br/>  }))</pre> | `[]` | no |
 
 ## Outputs
 
